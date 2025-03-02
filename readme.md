@@ -143,3 +143,33 @@ Use the `disabled:` prefix to apply styles to disabled elements. For example:
 ```
 
 For more information on pseudo-classes, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/hover-focus-and-other-states).
+
+
+## Animation
+Tailwind CSS provides utility classes to control animations and transitions, allowing you to add motion to your elements.
+
+### Transition
+Use the `transition` class to apply a transition to an element. You can control the properties, duration, and timing function of the transition using additional classes like `transition-all`, `duration-300`, and `ease-in-out`. For example:
+```html
+<div class="transition duration-300 ease-in-out transform hover:scale-105">
+    Hover me
+</div>
+```
+
+### Keyframes
+Tailwind CSS includes built-in keyframe animations that you can apply using the `animate-{name}` class. Some of the available animations include `animate-spin`, `animate-ping`, `animate-pulse`, and `animate-bounce`. For example:
+```html
+<div class="animate-spin">
+    Spinning Element
+</div>
+```
+
+### Animation Properties
+You can customize the animation properties using the following classes:
+- `animate-none`: Disables animation.
+- `animate-spin`: Applies a spinning animation.
+- `animate-ping`: Applies a ping animation.
+- `animate-pulse`: Applies a pulsing animation.
+- `animate-bounce`: Applies a bouncing animation.
+
+For more information on animations, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/animation).
