@@ -536,3 +536,63 @@ Tailwind CSS is a powerful and flexible utility-first CSS framework that allows 
 For more information and detailed documentation, visit the [official Tailwind CSS website](https://tailwindcss.com/docs).
 
 
+## Flexbox
+
+Flexbox is a layout model in CSS that allows you to design complex layouts with ease. It provides a more efficient way to align and distribute space among items in a container, even when their size is unknown or dynamic.
+
+### Flex Container
+To create a flex container, apply the `flex` class to an element. This element will then become a flex container, and its direct children will be flex items.
+
+```html
+<div class="flex">
+    <div class="p-4">Item 1</div>
+    <div class="p-4">Item 2</div>
+    <div class="p-4">Item 3</div>
+</div>
+```
+
+### Flex Direction
+Use the `flex-row` or `flex-col` classes to set the direction of the flex items. `flex-row` arranges items horizontally, while `flex-col` arranges them vertically.
+
+```html
+<div class="flex flex-row">
+    <div class="p-4">Item 1</div>
+    <div class="p-4">Item 2</div>
+    <div class="p-4">Item 3</div>
+</div>
+```
+
+### Justify Content
+Use the `justify-{value}` classes to align flex items along the main axis. The available values are `start`, `center`, `end`, `between`, `around`, and `evenly`.
+
+```html
+<div class="flex justify-center">
+    <div class="p-4">Item 1</div>
+    <div class="p-4">Item 2</div>
+    <div class="p-4">Item 3</div>
+</div>
+```
+
+### Align Items
+Use the `items-{value}` classes to align flex items along the cross axis. The available values are `start`, `center`, `end`, `baseline`, and `stretch`.
+
+```html
+<div class="flex items-center">
+    <div class="p-4">Item 1</div>
+    <div class="p-4">Item 2</div>
+    <div class="p-4">Item 3</div>
+</div>
+```
+
+### Flex Wrap
+Use the `flex-wrap` class to allow flex items to wrap onto multiple lines. Use `flex-nowrap` to prevent wrapping.
+
+```html
+<div class="flex flex-wrap">
+    <div class="p-4">Item 1</div>
+    <div class="p-4">Item 2</div>
+    <div class="p-4">Item 3</div>
+</div>
+```
+
+For more information on flexbox, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/flexbox).
