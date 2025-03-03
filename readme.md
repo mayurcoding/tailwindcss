@@ -365,7 +365,7 @@ Include Tailwind in your CSS file:
 Use utility classes in your HTML:
 ```html
 <div class="bg-blue-500 text-white p-4">
-    Hello, Tailwind CSS!
+    Hello, Tailwind CSS!g
 </div>
 ```
 
