@@ -258,3 +258,53 @@ Use the `block`, `inline-block`, `inline`, `hidden`, and other display classes t
 ```
 
 For more information on layouts and positioning, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/layout).
+
+## Overflow and Overscroll Behavior
+
+Tailwind CSS provides utility classes to control the overflow and overscroll behavior of elements.
+
+### Overflow
+Use the `overflow-{value}` class to control the overflow behavior of an element. The available values are `auto`, `hidden`, `visible`, and `scroll`. For example:
+```html
+<div class="overflow-auto">
+    Content with auto overflow
+</div>
+```
+
+### Overscroll Behavior
+Use the `overscroll-{value}` class to control the overscroll behavior of an element. The available values are `auto`, `contain`, and `none`. For example:
+```html
+<div class="overscroll-contain">
+    Content with contained overscroll
+</div>
+```
+
+For more information on overflow and overscroll behavior, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/overflow).
+
+## Float
+
+Tailwind CSS provides utility classes to control the float property of elements.
+
+### Float
+Use the `float-{value}` class to float an element to the left or right, or to clear the float. The available values are `left`, `right`, and `none`. For example:
+```html
+<div class="float-left">
+    Floated to the left
+</div>
+```
+
+For more information on float, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/float).
+
+## Box Sizing
+
+Tailwind CSS provides utility classes to control the box-sizing property of elements.
+
+### Box Sizing
+Use the `box-{value}` class to set the box-sizing property. The available values are `border` and `content`. For example:
+```html
+<div class="box-border">
+    Box with border-box sizing
+</div>
+```
+
+For more information on box-sizing, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/box-sizing).
