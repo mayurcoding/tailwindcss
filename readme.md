@@ -308,3 +308,33 @@ Use the `box-{value}` class to set the box-sizing property. The available values
 ```
 
 For more information on box-sizing, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/box-sizing).
+
+
+## Container
+
+Tailwind CSS provides a `container` utility to center and constrain the width of your content. The `container` class sets a max-width at different breakpoints, ensuring your content is responsive and well-aligned.
+
+### Usage
+To use the `container` class, simply add it to a `div` element. For example:
+```html
+<div class="container mx-auto">
+    Centered content
+</div>
+```
+In this example, `mx-auto` is used to center the container horizontally.
+
+### Customization
+You can customize the container's padding and breakpoints in your Tailwind CSS configuration file (`tailwind.config.js`). For example:
+```javascript
+module.exports = {
+    theme: {
+        container: {
+            center: true,
+            padding: '2rem',
+        },
+    },
+}
+```
+This configuration centers the container and adds 2rem of padding on all sides.
+
+For more information on the container utility, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/container).
