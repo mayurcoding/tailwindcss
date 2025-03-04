@@ -690,4 +690,25 @@ module.exports = {
 }
 ```
 
+<!-- 
+## Introduction to Tailwind CSS
+Tailwind is a utility-first framework designed to speed up the design process by completely removing the need for CSS. In the past, every HTML element would get a single class and that class would contain a lot of custom CSS in a separate CSS file. Though this is still the general practice, this practice leads to huge CSS files, reduces the ease of maintaining CSS and yields overall poorer developer experience.
+
+Another advantage of a utility framework is its superior performance with caching due to not busting the cache for small CSS changes. Tailwind has been designed with incredible sensible defaults to make your designs look and feel "polished" and "designed" through the careful use of color palettes, color shades, sizing consistency and modern web best-practices. It's also worth noting, that Tailwind is mobile-first and has an easy naming convention with responsive designs built-in.
+
+Tailwind's robust customization system will allow you to customize/tweak/modify everything in the framework through the use of the tailwind.config.js file. The customizations of Tailwind are beyond the scope of this course but rest assured that the default Tailwind classes are almost always exactly what you will need.
+
+## Advantages of Tailwind CSS
+- No need for huge CSS files with custom CSS.
+- Easy to make design changes right from the view files.
+- Better developer experience.
+- Mobile-first designs from the start.
+- Designed with defaults for a polished and designed look and feel.
+- Easily customizable with the config files.
+
+## How to use Tailwind CSS?
+### Using CDN Link:
+Using Tailwind CSS via CDN link allows you to quickly include Tailwind CSS in your HTML file without the need for any installation or setup. Simply add the Tailwind CSS CDN link to the <head> section of your HTML file, and you can start using Tailwind CSS utility classes immediately.
+
+CDN link:
 For more information on customization, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/customization).
