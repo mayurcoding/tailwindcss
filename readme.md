@@ -643,3 +643,51 @@ You can use responsive variants with any utility class. Here are a few examples:
 ```
 
 For more information on responsive design, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/responsive-design).
+## Customization
+
+Tailwind CSS is highly customizable, allowing you to tailor the framework to your specific needs. You can customize the default theme, extend it with your own values, or even create entirely new utility classes.
+
+### Configuration File
+Tailwind CSS uses a configuration file (`tailwind.config.js`) to manage customizations. You can generate this file using the following command:
+```bash
+npx tailwindcss init
+```
+
+### Theme Customization
+You can customize the default theme by modifying the `theme` section of the configuration file. For example, to add custom colors:
+```javascript
+module.exports = {
+    theme: {
+        extend: {
+            colors: {
+                'custom-blue': '#1c3d5a',
+                'custom-green': '#1c5a3d',
+            },
+        },
+    },
+}
+```
+
+### Plugins
+Tailwind CSS supports plugins, allowing you to add additional functionality or custom utilities. To use a plugin, install it via npm and include it in the `plugins` section of the configuration file. For example:
+```javascript
+const plugin = require('tailwindcss/plugin');
+
+module.exports = {
+    plugins: [
+        plugin(function({ addUtilities }) {
+            const newUtilities = {
+                '.skew-10deg': {
+                    transform: 'skewY(-10deg)',
+                },
+                '.skew-15deg': {
+                    transform: 'skewY(-15deg)',
+                },
+            };
+            addUtilities(newUtilities);
+        }),
+    ],
+}
+```
+
+For more information on customization, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/customization).
