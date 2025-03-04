@@ -596,3 +596,50 @@ Use the `flex-wrap` class to allow flex items to wrap onto multiple lines. Use `
 ```
 
 For more information on flexbox, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/flexbox).
+
+## Responsive Classes
+
+Tailwind CSS provides responsive variants for every utility class, allowing you to apply different styles at different breakpoints. This makes it easy to build responsive designs that adapt to various screen sizes.
+
+### Breakpoints
+Tailwind CSS uses a mobile-first approach, meaning that unprefixed utility classes apply to all screen sizes, while prefixed classes apply only at specific breakpoints. The default breakpoints are:
+- `sm`: 640px
+- `md`: 768px
+- `lg`: 1024px
+- `xl`: 1280px
+- `2xl`: 1536px
+
+### Usage
+To apply a utility class at a specific breakpoint, prefix the class with the breakpoint name followed by a colon. For example:
+```html
+<div class="text-base md:text-lg lg:text-xl">
+    Responsive Text
+</div>
+```
+In this example, the text size will be `text-base` on small screens, `text-lg` on medium screens, and `text-xl` on large screens.
+
+### Responsive Variants
+You can use responsive variants with any utility class. Here are a few examples:
+
+#### Padding
+```html
+<div class="p-4 md:p-8 lg:p-12">
+    Responsive Padding
+</div>
+```
+
+#### Margin
+```html
+<div class="m-4 md:m-8 lg:m-12">
+    Responsive Margin
+</div>
+```
+
+#### Display
+```html
+<div class="block md:inline-block lg:hidden">
+    Responsive Display
+</div>
+```
+
+For more information on responsive design, visit the [official Tailwind CSS documentation](https://tailwindcss.com/docs/responsive-design).
