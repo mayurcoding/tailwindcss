@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List Application</title>
+    <style>
+        *
+        {
+            background-color: black;
+            text-shadow: 0cqb;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+        }
+        table
+        {
+            text-align: center;
+            background-color: black;
+            color: blue;
+            width: 100%;
+            height: auto;
+        }
+        input, id
+        {
+            text-shadow: 20cqw;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grocery List</h1>
+    <input type="text" id="item-name-input" placeholder="Enter item name">
+    <input type="number" id="item-price-input" placeholder="Enter item price">
+    <button onclick="submitItem()">Add Item</button>
+    
+    <table border="1">
+        <tr>
+            <th>Sr. No.</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Grand Total</td>
+            <td data-ns-test="grandTotal">0</td>
+        </tr>
+    </table>
+    
+    <script>
+        const table = document.getElementsByTagName('table')[0];
+        const tableHeading = table.getElementsByTagName('tr')[0];
+        const dataHolder = [];
+        
+        function createRow(data) {
+            const tableRow = document.createElement('tr');
+            tableRow.innerHTML = `
+                <td>${data.index + 1}</td>
+                <td data-ns-test="item-name">${data.name}</td>
+                <td data-ns-test="item-price">${data.price}</td>
+            `;
+            return tableRow;
+        }
+        
+        function calculateTotal(data) {
+            const total = data.reduce((acc, current) => acc + parseInt(current.price), 0);
+            const totalRow = document.createElement('tr');
+            totalRow.innerHTML = `
+                <td colspan="2">Grand Total</td>
+                <td data-ns-test="grandTotal">${total}</td>
+            `;
+            return totalRow;
+        }
+        
+        function submitItem() {
+            const itemNameInput = document.getElementById('item-name-input');
+            const itemPriceInput = document.getElementById('item-price-input');
+            
+            if (itemNameInput.value !== "" && itemPriceInput.value !== "") {
+                const newItem = {
+                    index: dataHolder.length,
+                    name: itemNameInput.value,
+                    price: itemPriceInput.value,
+                };
+                
+                dataHolder.push(newItem);
+                itemNameInput.value = "";
+                itemPriceInput.value = "";
+                
+                table.innerHTML = "";
+                table.appendChild(tableHeading);
+                dataHolder.forEach((data) => table.appendChild(createRow(data)));
+                table.appendChild(calculateTotal(dataHolder));
+            }
+        }
+    </script>
+</body>
+</html>

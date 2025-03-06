@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list application</title>
+</head>
+<body>
+    <h1>Grocery List</h1>
+<input type="text" id="item-name-input" placeholder="Enter item name">
+<input type="number" id="item-price-input" placeholder="Enter item price">
+<button onclick="submitItem()"> Add Item</button>
+<Table border="1">
+    <tr>
+        <th>Sr. No.</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>Grand Total</td>
+        <td data-ns-test="grandTotal">0</td>
+    </tr>
+</Table>
+<script>
+    const table = document.getElementByTogName('table')[0];
+    const tableHeading = table.getElementsByTagName('tr')[0];
+
+    function createRow(data)
+    {
+        const tableRow = document.createElement('tr');
+        tableRow.innerHTML = `
+        <td>${data.index + 1}</td>
+        <td data-ns-test= "item-name">${data.name}</td>
+        <td data-ns-test= "item-name">${data.name}</td>
+        `;
+        return tableRow;
+
+        }
+
+        const dataHolder =[];
+
+        function submitItem()
+        {
+            const itemNameInput = document.getElementById('item-name-input');
+            const itemPriceInput = document.getElementById('item-price-input');
+
+            if (itemNameInput.value !== "" && itemPriceInput.value !== "") {
+                const newItem = {
+                    index: dataHolder.length,
+                    name: itemNameInput.value,
+                    price: itemPriceInput.value,
+                };
+                dataHolder.push(newItem);
+                itemNameInput.value = "";
+                itemPriceInput.value = "";
+
+                table.innerHTML = "";
+                table.appendChild(tableHeading);
+                dataHolder.forEach((data) => {
+                    table.appendChild(createRow(data));
+                });
+                table.appendChild(calculateTotal(dataHolder));
+
+
+            }
+        }
+
+
+
+
+</script>
+    
+</body>
+</html>
