@@ -865,3 +865,147 @@ formElement.addEventListener('submit', (event) => {
 ```
 
 For more information on DOM manipulation, visit the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).
+
+
+## Advanced JavaScript Topics
+
+### Closures
+A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope. Closures are useful for creating private variables and functions.
+
+```javascript
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+```
+
+### Promises and Async/Await
+Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value. `async` and `await` provide a way to work with promises more comfortably.
+
+```javascript
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data fetched');
+        }, 1000);
+    });
+}
+
+async function getData() {
+    const data = await fetchData();
+    console.log(data);
+}
+
+getData(); // Data fetched
+```
+
+### Modules
+JavaScript modules allow you to break your code into separate files and import/export functionality between them.
+
+```javascript
+// module.js
+export const greet = () => {
+    console.log('Hello, World!');
+};
+
+// main.js
+import { greet } from './module.js';
+greet(); // Hello, World!
+```
+
+### Prototypes and Inheritance
+JavaScript uses prototypes for inheritance. Every object has a prototype, and objects inherit properties and methods from their prototype.
+
+```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log(`Hello, my name is ${this.name}`);
+};
+
+const john = new Person('John');
+john.greet(); // Hello, my name is John
+```
+
+### Event Loop
+The event loop is a mechanism that allows JavaScript to perform non-blocking operations by offloading operations to the system kernel whenever possible.
+
+```javascript
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout');
+}, 0);
+
+console.log('End');
+
+// Output:
+// Start
+// End
+// Timeout
+```
+
+### Higher-Order Functions
+Higher-order functions are functions that take other functions as arguments or return functions as their result.
+
+```javascript
+function higherOrder(fn) {
+    return function(x) {
+        return fn(x) * 2;
+    };
+}
+
+const double = higherOrder((x) => x + 1);
+console.log(double(3)); // 8
+```
+
+### Currying
+Currying is the process of transforming a function that takes multiple arguments into a sequence of functions that each take a single argument.
+
+```javascript
+function curry(fn) {
+    return function curried(...args) {
+        if (args.length >= fn.length) {
+            return fn.apply(this, args);
+        } else {
+            return function(...args2) {
+                return curried.apply(this, args.concat(args2));
+            };
+        }
+    };
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+const curriedAdd = curry(add);
+console.log(curriedAdd(1)(2)); // 3
+```
+
+### Generators
+Generators are functions that can be paused and resumed, allowing you to work with asynchronous code in a synchronous-like manner.
+
+```javascript
+function* generator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const gen = generator();
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
+```
+
+For more information on advanced JavaScript topics, visit the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
