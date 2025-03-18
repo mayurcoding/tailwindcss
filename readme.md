@@ -1156,3 +1156,4 @@ console.log(gen.next().value); // 3
 ```
 
 For more information on advanced JavaScript topics, visit the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+
