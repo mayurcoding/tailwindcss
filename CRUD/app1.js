@@ -51,4 +51,22 @@ form.addEventListener("submit", (e) => {
   task.appendChild(actions);
 
   input.value = "";
+
+
+  task_edit.addEventListener("click", () => {
+    if (task_edit.innerHTML === "Edit") {
+    task_input.removeAttribute("readonly");
+    task_edit.innerHTML = "Save";
+    task_input.focus();
+    } else
+    {
+      task_input.setAttribute("readonly", "readonly");
+      task_edit.innerHTML = "Edit";
+
+    }
+  });
+
+  task_delete.addEventListener("click", () => {
+    tasks.removeChild(task)
+  });
 });
