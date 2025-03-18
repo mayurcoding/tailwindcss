@@ -45,12 +45,23 @@ let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // console.log(numbers);
 // console.log(greaterThan5);
 
-let marks = [67, 54, 24 ,66, 43, 38, 32, 39];
+// let marks = [67, 54, 24 ,66, 43, 38, 32, 39];
 
-let graceMarks = marks.filter((mark) => {
-    return mark < 40;
-}).map((mark) => {
-    return mark + 10; 
+// let graceMarks = marks.filter((mark) => {
+//     return mark < 40;
+// }).map((mark) => {
+//     return mark + 10; 
+// }
+// );  
+// console.log(graceMarks);
+
+
+// destructuring 
+let user =
+{
+    name: "John",
+    age: 25,
+    gender: "malee"
 }
-);  
-console.log(graceMarks);
+let {name, age, gender} = user;
+  console.log(name,age,gender);
