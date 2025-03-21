@@ -96,7 +96,7 @@
 
 // // 1- Explain hoisting with an example
 
-// Hoisting is a JavaScript mechanism where variables and function declarations 
+// Hoisting is a JavaScript mechanism where variables and function declarations
 // are moved ("hoisted") to the top of their scope before code execution. However,
 //  only the declaration is hoisted, not the initialization.
 
@@ -126,7 +126,6 @@
 // - They are hoisted but remain in a **temporal dead zone** (TDZ) until the declaration is encountered.
 // - Accessing `b` before its declaration causes a **ReferenceError**.
 
-
 // Example 3: Hoisting with Functions
 // ```javascript
 // hello(); // Output: "Hello, world!"
@@ -145,7 +144,6 @@
 // var greet = function() {
 //   console.log("Hi there!");
 // };
-
 
 // Write a higher order function that takes a callback function as an argument.
 
@@ -178,10 +176,38 @@
 // incrementCounter();
 // incrementCounter();
 
-
 // Write a javascript code that promise with 'hello' the append 'world!' and logs the message.
 
-const promise = Promise.resolve("Hello");
-promise.then((value) => {
-  console.log(value + " World!");
+// const promise = Promise.resolve("Hello");
+// promise.then((value) => {
+//   console.log(value + " World!");
+// });
+
+
+
+
+
+
+// Create a promise that resolves after 2 seconds.
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved after 2 seconds");
+  }, 2000);
 });
+console.log("Promise created");
+//use then() method to handle promise resolution.
+
+promise.then((value) => console.log(value));
+
+// Use a async/await to fetch data from an API.
+let url = "https://jsonplaceholder.typicode.com/posts";
+
+fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    for (let item in data) {
+      console.log(data[item].title);
+    }
+  });
