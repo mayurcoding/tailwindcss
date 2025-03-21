@@ -183,31 +183,108 @@
 //   console.log(value + " World!");
 // });
 
+// // Create a promise that resolves after 2 seconds.
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("Promise resolved after 2 seconds");
+//   }, 2000);
+// });
+// console.log("Promise created");
+// //use then() method to handle promise resolution.
+
+// promise.then((value) => console.log(value));
+
+// // Use a async/await to fetch data from an API.
+// let url = "https://jsonplaceholder.typicode.com/posts";
+
+// fetch(url)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+//     for (let item in data) {
+//       console.log(data[item].title);
+//     }
+//   });
 
 
 
 
 
-// Create a promise that resolves after 2 seconds.
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("Promise resolved after 2 seconds");
-  }, 2000);
+
+
+
+
+
+
+
+
+
+
+//1. Explain event bubbling with an example.
+// Event bubbling is a concept in the DOM (Document Object Model) where an event starts
+//  from the deepest target element and then bubbles up to the ancestor elements.
+// This means that if an event is triggered on a child element, it will also trigger on
+// its parent elements, unless explicitly stopped.
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Event Bubbling Example</title>
+// </head>
+// <body>
+//   <div id="parent" style="padding: 20px; border: 1px solid black;">
+//     Parent
+//     <div id="child" style="padding: 20px; border: 1px solid red;">
+//       Child
+//     </div>
+//   </div>
+
+//   <script>
+//     document.getElementById('parent').addEventListener('click', function() {
+//       console.log('Parent clicked');
+//     });
+
+//     document.getElementById('child').addEventListener('click', function(event) {
+//       console.log('Child clicked');
+//       // Uncomment the next line to stop event bubbling
+//       // event.stopPropagation();
+//     });
+//   </script>
+// </body>
+// </html>
+// In this example:
+
+// There are two nested div elements: parent and child.
+// Both div elements have click event listeners attached to them.
+// When you click on the child div, the event will first trigger the child's event listener, logging "Child clicked".
+// Then, the event will bubble up to the parent div, triggering its event listener and logging "Parent clicked".
+// If you want to stop the event from bubbling up to the parent elements, you can use the event.stopPropagation() method inside the child's event listener. Uncomment the event.stopPropagation() line in the child's event listener to see this in action.
+
+
+// 2. Implement event delegation with to handle events on mutlitple elements.
+
+
+
+const div = document.querySelector("div");
+
+div.addEventListener("click", (event) => {
+  if (event.target.id === "button1") {
+    console.log("Button 1 clicked");
+  }
+  if (event.target.id === "button2") {
+    console.log("Button 2 clicked");
+  }
+  if (event.target.id === "button3") {
+    console.log("Button 3 clicked");
+  }
 });
-console.log("Promise created");
-//use then() method to handle promise resolution.
 
-promise.then((value) => console.log(value));
-
-// Use a async/await to fetch data from an API.
-let url = "https://jsonplaceholder.typicode.com/posts";
-
-fetch(url)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    for (let item in data) {
-      console.log(data[item].title);
-    }
-  });
+//use this keyword to access the content of a function.
+function greet(name) {
+  console.log("Hello My name is Mayur Rastogi and I am a web developer");
+  console.log(this.name);
+}
+greet();
