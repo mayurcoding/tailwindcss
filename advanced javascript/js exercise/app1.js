@@ -149,32 +149,39 @@
 
 // Write a higher order function that takes a callback function as an argument.
 
-let stepOne = (callback) => {
-  console.log("Step One completed");
-  callback();
-}
+// let stepOne = (callback) => {
+//   console.log("Step One completed");
+//   callback();
+// }
 
-let stepTwo = () => {
-  console.log("Step Two completed");
-}
-stepOne(stepTwo);
+// let stepTwo = () => {
+//   console.log("Step Two completed");
+// }
+// stepOne(stepTwo);
 
-// Create a closure that returns a function with access to its own scope.
+// // Create a closure that returns a function with access to its own scope.
 
-function counter()
-{
-  let count = 0;
-  return function inner()
-  {
-    count++;
-    console.log(count);
-    console.log('Counter: $(count)');
-  }
-}
+// function counter()
+// {
+//   let count = 0;
+//   return function inner()
+//   {
+//     count++;
+//     console.log(count);
+//     console.log('Counter: $(count)');
+//   }
+// }
 
-const incrementCounter = counter();
-incrementCounter();
-incrementCounter();
-incrementCounter();
-incrementCounter();
+// const incrementCounter = counter();
+// incrementCounter();
+// incrementCounter();
+// incrementCounter();
+// incrementCounter();
 
+
+// Write a javascript code that promise with 'hello' the append 'world!' and logs the message.
+
+const promise = Promise.resolve("Hello");
+promise.then((value) => {
+  console.log(value + " World!");
+});
