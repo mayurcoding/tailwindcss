@@ -57,11 +57,12 @@ let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 // destructuring 
-let user =
-{
-    name: "John",
-    age: 25,
-    gender: "malee"
-}
-let {name, age, gender} = user;
-  console.log(name,age,gender);
+// let user =
+// {
+//     name: "John",
+//     age: 25,
+//     gender: "malee"
+// }
+// let {name, age, gender} = user;
+//   console.log(name,age,gender);
+
